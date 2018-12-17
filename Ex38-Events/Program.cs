@@ -10,6 +10,12 @@ namespace Ex38_Events
     {
         static void Main(string[] args)
         {
+            ImAlive isIAlive = new ImAlive();
+            AliveChecker aliveChecker = new AliveChecker();
+            aliveChecker.CheckVitals += isIAlive.StillHere;
+            aliveChecker.Beep += isIAlive.BeepBeep;
+
+            aliveChecker.Start();
         }
     }
 }
